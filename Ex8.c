@@ -4,12 +4,12 @@ void main()
  int i,matricula, idade, idadeI, tempo,funcioabaixo, qMulheres=0,qMasc=0,tempoMaisA=0,tempoMaisN=1000,matriculaMaisA,matriculaMaisN=0;
  float salario,salarioMasc = 0,mediaSalarioMasc =0 ;
  char genero;
- for (i=1;i<=2/*250*/;i++)
+ for (i=1;i<=1/*250*/;i++)
  {
  //lendo o genero
  printf("Genero (F)eminino e (M)asculino: ");
  scanf(" %c",&genero);
- 
+  genero = toupper (genero);
  //lendo a matricula
  printf("Matricula: ");
  scanf("%d",&matricula);
@@ -68,7 +68,14 @@ void main()
 
  printf("\nQuantidade de funcionarios que ingrssaram com menos que 21 anos: %d", funcioabaixo);
  printf("\nQuantidade de funcionarios mulheres : %d", qMulheres );
- printf("\nMedia salarial dos homens: %.1f",mediaSalarioMasc);
+ if(qMasc>=1)
+ {
+  printf("\nMedia salarial dos homens: %.1f",mediaSalarioMasc);
+  }
+  else
+  {
+    printf("\nSem funcionarios do genero masculino");
+  }
  printf("\nMatricula do funcionario mais antigo: %d",matriculaMaisA);
  printf("\nMatricula do funcionario mais recente: %d",matriculaMaisN);
 }
